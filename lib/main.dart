@@ -23,6 +23,7 @@ class Myapp extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(
               title: const Text("Image Example"),
+              actions: [PopupButtonExample()],
             ),
             body: PopupButtonExample()));
   }
