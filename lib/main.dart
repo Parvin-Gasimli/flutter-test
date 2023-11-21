@@ -1,59 +1,86 @@
 import 'package:flutter/material.dart';
+import 'package:project/basic_button.dart';
+import 'package:project/image_widget.dart';
+import 'package:project/dropdownbutton.dart';
+import 'package:project/popupButton.dart';
 
-void main() {
-  runApp(MyApp());
+void main(List<String> args) {
+  runApp(const Myapp());
 }
 
-class MyApp extends StatelessWidget {
+class Myapp extends StatelessWidget {
+  const Myapp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData(
-      //   primaryColor: Colors.teal,
-      //   hintColor: Colors.amber,
-      // ),
-      title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-            backgroundColor: const Color.fromARGB(255, 1, 1, 1),
-            title: const Text('Test App')),
-        body: Center(
-          widthFactor: 3,
-          heightFactor: 3,
-          child: Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 24, 23, 20),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromARGB(255, 194, 184, 184),
-                  blurRadius: 10,
-                  spreadRadius: 2,
-                  offset: Offset(5, 5),
-                ),
-              ],
+        title: "my Counter App",
+        theme: ThemeData(
+            primarySwatch: Colors.teal,
+            textTheme: TextTheme(
+              headline1: TextStyle(fontSize: 34, color: Colors.black),
+            )),
+        home: Scaffold(
+            appBar: AppBar(
+              title: const Text("Image Example"),
             ),
-            alignment: Alignment.center,
-            child: FlutterLogo(
-              size: 124,
-            ),
-            padding: const EdgeInsets.all(20.0),
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-          hoverColor: Colors.amberAccent,
-          onPressed: () {
-            debugPrint('FAB clicked');
-          },
-          child: const Icon(
-            Icons.add,
-            color: Colors.blue,
-          ),
+            body: PopupButtonExample()));
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "My Counter App Bar",
         ),
       ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          NewWidget(),
+          Text(_count.toString(), style: Theme.of(context).textTheme.headline1),
+        ],
+      )),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {
+          increment(),
+          print("Button Clikcledni"),
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  void increment() {
+    setState(() {
+      _count++;
+    });
+  }
+}
+
+class NewWidget extends StatelessWidget {
+  const NewWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Buttona basma sayi",
+      style: TextStyle(fontSize: 24, color: Colors.blueAccent.shade100),
     );
   }
 }
