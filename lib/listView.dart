@@ -37,6 +37,9 @@ class ListViewExample extends StatelessWidget {
                       toastPosition: EasyLoadingToastPosition.top,
                       dismissOnTap: true)
                 },
+                onLongPress: () => {
+                  _alertDialog(context, newStu),
+                },
                 leading: CircleAvatar(
                   child: Text(
                     newStu.id.toString(),
@@ -74,6 +77,41 @@ class ListViewExample extends StatelessWidget {
               ))
           .toList(),
     );
+  }
+
+  void _alertDialog(BuildContext context, Student stu) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(stu.name.toString()),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Text(
+                    "Are you sure?",
+                    style: TextStyle(
+                        background: Paint()..color = Colors.black,
+                        color: Colors.white),
+                  ),
+                  Text("You will delete this element"),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("Cancel")),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("OK")),
+            ],
+          );
+        });
   }
 }
 
