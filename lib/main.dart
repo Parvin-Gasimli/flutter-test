@@ -8,6 +8,7 @@ import 'package:project/dropdownbutton.dart';
 import 'package:project/listView.dart';
 import 'package:project/list_view_layoutproblem.dart';
 import 'package:project/popupButton.dart';
+import 'package:project/redpage.dart';
 
 void main() {
   runApp(const Myapp());
@@ -42,7 +43,7 @@ class Myapp extends StatelessWidget {
           textTheme: TextTheme(
             headline1: TextStyle(fontSize: 34, color: Colors.black),
           )),
-      home: GridViewExample(),
+      home: RedPageExample(),
       builder: EasyLoading.init(),
     );
   }

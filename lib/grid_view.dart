@@ -20,7 +20,24 @@ class GridViewExample extends StatelessWidget {
         scrollDirection: Axis.vertical,
         children: [
           Container(
-            color: Colors.black,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Colors.black,
+                  Colors.blue,
+                ],
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color.fromARGB(255, 72, 69, 69),
+                  blurRadius: 5,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
             child: const Center(
               child: Text(
                 "Hello Code",
@@ -32,7 +49,24 @@ class GridViewExample extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.green,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Colors.black,
+                  Colors.blue,
+                ],
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color.fromARGB(255, 72, 69, 69),
+                  blurRadius: 5,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
             child: const Center(
               child: Text(
                 "Hello ",
@@ -44,7 +78,24 @@ class GridViewExample extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.blue,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  const Color.fromARGB(255, 172, 27, 27),
+                  Colors.blue,
+                ],
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color.fromARGB(255, 72, 69, 69),
+                  blurRadius: 5,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
             child: const Center(
               child: Text(
                 "Hello Flutter",
@@ -56,7 +107,24 @@ class GridViewExample extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.yellow,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  const Color.fromARGB(255, 172, 27, 27),
+                  Colors.blue,
+                ],
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color.fromARGB(255, 72, 69, 69),
+                  blurRadius: 5,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
             child: const Center(
               child: Text(
                 "Hello World and Hello Flutter",
@@ -65,29 +133,6 @@ class GridViewExample extends StatelessWidget {
                   fontSize: 24,
                 ),
               ),
-            ),
-          ),
-          Container(
-            color: Colors.purple,
-            child: const Center(
-              child: Text(
-                "Hello World",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-          ),
-          Container(
-            color: Colors.orange,
-            child: const Center(
-              child: Center(
-                  child: Text("Hello World",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                      ))),
             ),
           ),
         ],
