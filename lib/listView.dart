@@ -88,11 +88,16 @@ class ListViewExample extends StatelessWidget {
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  Text(
-                    "Are you sure?",
-                    style: TextStyle(
-                        background: Paint()..color = Colors.black,
-                        color: Colors.white),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text("Are you sure?"),
+                      style: TextButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          primary: Colors.white,
+                          textStyle: TextStyle(fontSize: 16)),
+                    ),
                   ),
                   Text("You will delete this element"),
                 ],
@@ -100,11 +105,19 @@ class ListViewExample extends StatelessWidget {
             ),
             actions: [
               TextButton(
+                  style: TextButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      primary: Colors.white,
+                      textStyle: TextStyle(fontSize: 16)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child: Text("Cancel")),
               TextButton(
+                  style: TextButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      primary: Colors.white,
+                      textStyle: TextStyle(fontSize: 16)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },

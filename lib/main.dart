@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:project/Card_list.dart';
 import 'package:project/basic_button.dart';
+import 'package:project/grid_view.dart';
 import 'package:project/image_widget.dart';
 import 'package:project/dropdownbutton.dart';
 import 'package:project/listView.dart';
+import 'package:project/list_view_layoutproblem.dart';
 import 'package:project/popupButton.dart';
 
 void main() {
@@ -40,7 +42,7 @@ class Myapp extends StatelessWidget {
           textTheme: TextTheme(
             headline1: TextStyle(fontSize: 34, color: Colors.black),
           )),
-      home: ListViewExample(),
+      home: GridViewExample(),
       builder: EasyLoading.init(),
     );
   }
