@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/burc_list.dart';
+import 'package:project/route_generator.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,
       // ),
-      home: BurcListesi(),
+      onGenerateRoute: RouteGenrator.routeGenerator,
+      initialRoute: "/burcListesi",
     );
   }
 }

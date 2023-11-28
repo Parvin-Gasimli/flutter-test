@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/burc_detail.dart';
 import 'package:project/model/burc.dart';
 
 class BurcItem extends StatelessWidget {
@@ -13,6 +14,10 @@ class BurcItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: ListTile(
+          onTap: () {
+            Navigator.pushNamed(context, "/burcDetay",
+                arguments: listenenBurclar);
+          },
           leading:
               Image.asset("assets/images/" + listenenBurclar.burcKucukResim),
           title: Text(listenenBurclar.burcAdi, style: myTextStyle.headline5),
